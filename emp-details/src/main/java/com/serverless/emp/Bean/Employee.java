@@ -5,7 +5,7 @@ package com.serverless.emp.Bean;
  */
 
 
-public class EmpBean {
+public class Employee implements java.io.Serializable {
 
     private final long id;
     private final String name;
@@ -15,7 +15,8 @@ public class EmpBean {
     // Constructor
     // -------------------------------------------------------------------
 
-    private EmpBean(long id, String name, String role) {
+
+    private Employee(long id, String name, String role) {
         super();
 
         this.id = id;
@@ -43,8 +44,8 @@ public class EmpBean {
     // Factory Methods
     // ------------------------------------------------------------------------
 
-    public static EmpBean from(long id, String name, String role) {
-        return new EmpBean(id, name, role);
+    public static Employee from(long id, String name, String role) {
+        return new Employee(id, name, role);
     }
 
 }
