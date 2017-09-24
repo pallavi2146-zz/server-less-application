@@ -21,6 +21,10 @@ dependencies {
     compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.199'
 
 
+    // mybatis
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.4'
+
+
     // JSON
     compile group:'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
@@ -44,4 +48,6 @@ task buildZip(type: Zip) {
 }
 
 build.dependsOn buildZip
+
+
 
