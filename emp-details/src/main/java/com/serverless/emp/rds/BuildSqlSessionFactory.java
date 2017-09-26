@@ -39,10 +39,15 @@ public class BuildSqlSessionFactory {
 
         PooledDataSource dataSource = new PooledDataSource();
 
-        dataSource.setDriver(System.getenv("DRIVER_CLASS_NAME"));
-        dataSource.setUrl("jdbc:mysql://"+System.getenv("DB_URL"));
-        dataSource.setUsername(System.getenv("DB_HOST_USERNAME"));
-        dataSource.setPassword(System.getenv("DB_HOST_PWD"));
+        dataSource.setDriver(System.getenv("DB_DRIVER"));
+        dataSource.setUrl("jdbc:mysql://"
+                + System.getenv("RDS_HOSTNAME")
+                + "/"
+                + System.getenv("RDS_DB_NAME"));
+        dataSource.setUsername(System.getenv("RDS_USERNAME"));
+        dataSource.setPassword(System.getenv("RDS_PASSWORD"));
+
+
 
         return dataSource;
 
