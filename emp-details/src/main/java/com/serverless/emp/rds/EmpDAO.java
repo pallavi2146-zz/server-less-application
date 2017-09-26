@@ -1,7 +1,8 @@
 package com.serverless.emp.rds;
 
-import com.serverless.emp.Bean.Employee;
+import com.serverless.emp.entity.Employee;
 import org.apache.ibatis.session.SqlSession;
+
 
 /**
  * Created by pallavi on 25/9/17.
