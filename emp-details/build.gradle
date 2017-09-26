@@ -25,6 +25,11 @@ dependencies {
     compile group: 'org.mybatis', name: 'mybatis', version: '3.4.4'
 
 
+    //mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+
+
+
     // JSON
     compile group:'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
 
