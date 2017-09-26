@@ -1,22 +1,21 @@
 package com.serverless.emp.lambda;
 
-import com.amazonaws.Response;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import com.amazonaws.services.lambda.runtime.RequestStreamHandler;
-import com.serverless.emp.Bean.Employee;
+import com.serverless.emp.entity.Employee;
 import com.serverless.emp.rds.EmpDAO;
+
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import java.io.*;
 
 /**
  * Created by pallavi on 21/9/17.
  */
-public class EmpRequestHandler implements RequestHandler<Employee, String> {
+public class EmpRequestHandler implements RequestHandler<Employee, JSONObject> {
 
-    public String handleRequest(Employee emp, Context context){
+    public JSONObject handleRequest(Employee emp, Context context){
 
         JSONParser parser = new JSONParser();
 
@@ -27,11 +26,12 @@ public class EmpRequestHandler implements RequestHandler<Employee, String> {
         EmpDAO empDAO = new EmpDAO();
         empDAO.addEmpDetails(emp);
 
+        JSONObject response = new JSONObject();
+        response.put("message", "Employee created sucessfully!");
 
-        return  "Employee details added into the DB.";
+        return  response;
 
 
     }
-
 
 }
