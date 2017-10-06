@@ -1,11 +1,9 @@
-# server-less-application
-Building server less application using AWS - API Gateway and Lambda.
 
-## Serverless application
+# Serverless application
 
 Building server less application using AWS - API Gateway and Lambda.
 
-# Usage
+## Usage
 
 ```
 # Clone the repo
