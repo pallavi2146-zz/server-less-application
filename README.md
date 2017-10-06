@@ -22,7 +22,7 @@ $ gradle build
 ../server-less-application/emp-details/build/distributions/emp-1.0-SNAPSHOT.zip
 
 
-## AWS Lambda handler
+## AWS Lambda handler function
 
 `com.serverless.emp.lambda.EmpRequestHandler::handleRequest`
 
